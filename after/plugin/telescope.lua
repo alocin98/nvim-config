@@ -13,6 +13,7 @@ end)
 local easypick = require("easypick")
 
 -- only required for the example to work
+--
 local base_branch = "develop"
 
 easypick.setup({
