@@ -15,6 +15,10 @@ return require('packer').startup(function(use)
     use "lukas-reineke/lsp-format.nvim"
     use "sindrets/diffview.nvim"
     use 'nvim-tree/nvim-web-devicons'
+    require('packer').startup(function(use)
+        use { "axkirillov/telescope-changed-files" }
+    end)
+
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }
