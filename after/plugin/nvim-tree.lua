@@ -1,17 +1,17 @@
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-  update_focused_file = {
-                  enable = true,
-                  update_root = true,
+    sort_by = "case_sensitive",
+    view = {
+        width = 30,
+    },
+    renderer = {
+        group_empty = true,
+    },
+    filters = {
+        dotfiles = true,
+    },
+    update_focused_file = {
+        enable = true,
+        update_root = true,
 
-               },
+    }
 })

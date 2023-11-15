@@ -1,12 +1,23 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
-vim.cmd.packadd('packer.nvim')
-
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
+
+
+
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
     use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
+
+
+
+
     use { "catppuccin/nvim", as = "catppuccin" }
     use {
         'nvim-lualine/lualine.nvim',
@@ -14,10 +25,8 @@ return require('packer').startup(function(use)
     }
     use "lukas-reineke/lsp-format.nvim"
     use "sindrets/diffview.nvim"
-    use 'nvim-tree/nvim-web-devicons'
-    require('packer').startup(function(use)
+  use 'nvim-tree/nvim-web-devicons'
         use { "axkirillov/telescope-changed-files" }
-    end)
 
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
@@ -29,13 +38,7 @@ return require('packer').startup(function(use)
         },
     }
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-
-    use({
+        use({
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()

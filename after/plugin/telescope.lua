@@ -49,4 +49,4 @@ easypick.setup({
 
 
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>cf', ':Easypick changed_files')
+vim.keymap.set('n', '<leader>cf', ':Easypick changed_files<CR>==')
