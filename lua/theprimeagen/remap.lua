@@ -20,6 +20,7 @@ vim.keymap.set("n", "<C-k>", "<C-W>k")
 
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>")   -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+vim.keymap.set("n", "<leader>w", ":w<CR>")
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])

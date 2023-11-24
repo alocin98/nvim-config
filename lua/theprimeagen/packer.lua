@@ -15,8 +15,13 @@ return require('packer').startup(function(use)
     }
     use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
 
+    use "folke/tokyonight.nvim"
+    use "bluz71/vim-nightfly-colors"
 
-
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
 
     use { "catppuccin/nvim", as = "catppuccin" }
     use {
@@ -25,8 +30,8 @@ return require('packer').startup(function(use)
     }
     use "lukas-reineke/lsp-format.nvim"
     use "sindrets/diffview.nvim"
-  use 'nvim-tree/nvim-web-devicons'
-        use { "axkirillov/telescope-changed-files" }
+    use 'nvim-tree/nvim-web-devicons'
+    use { "axkirillov/telescope-changed-files" }
 
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
@@ -38,13 +43,6 @@ return require('packer').startup(function(use)
         },
     }
 
-        use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
 
     use({
         "folke/trouble.nvim",

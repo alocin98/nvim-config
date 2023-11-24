@@ -1,11 +1,17 @@
+require("telescope").setup {
+    extensions = {
+        file_browser
+    }
+}
+require("telescope").load_extension "file_browser"
 local builtin = require('telescope.builtin')
 -- normal telescope config
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fj', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fw', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-
+vim.keymap.set('n', '<leader>fs', ':Telescope git_status<CR>', {})
 
 
 
@@ -49,4 +55,6 @@ easypick.setup({
 
 
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>cf', ':Easypick changed_files<CR>==')
+vim.keymap.set('n', '<leader>fc', ':Easypick changed_files<CR>==')
+vim.keymap.set('n', '<leader>fu', ':Telescope lsp_references<CR>==')
+vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>==')
