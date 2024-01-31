@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use { 'mhartington/formatter.nvim' }
 
 
 
@@ -90,6 +91,11 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         }
+    }
+
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = 'nvim-lua/plenary.nvim'
     }
 
     use("folke/zen-mode.nvim")

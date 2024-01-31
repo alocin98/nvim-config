@@ -5,6 +5,19 @@ require("nvim-tree").setup({
     },
     renderer = {
         group_empty = true,
+        indent_width = 1,
+        indent_markers = {
+            enable = true,
+            inline_arrows = true,
+            icons = {
+                corner = "└",
+                edge = "│",
+                item = "│",
+                bottom = "─",
+                none = " ",
+            },
+        },
+
     },
     filters = {
         dotfiles = false,
@@ -13,5 +26,7 @@ require("nvim-tree").setup({
         enable = true,
         update_root = true,
 
-    }
+    },
+
+
 })

@@ -34,7 +34,8 @@ easypick.setup({
             -- the command to execute, output has to be a list of plain text entries
             command = "ls",
             -- specify your custom previwer, or use one of the easypick.previewers
-            previewer = easypick.previewers.default()
+            previewer = easypick.previewers.default(),
+            hidden = true
         },
 
         -- diff current branch with base_branch and show files that changed with respective diffs in preview

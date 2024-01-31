@@ -8,9 +8,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
 
 -- Nicolas great remaps
 vim.keymap.set("n", "<C-h>", "<C-W>h")
@@ -21,6 +18,9 @@ vim.keymap.set("n", "<C-k>", "<C-W>k")
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>")   -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
 vim.keymap.set("n", "<leader>w", ":w<CR>")
+
+vim.keymap.set("v", "<leader>gy", "\"*y")
+
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
