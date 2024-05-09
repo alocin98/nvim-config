@@ -4,9 +4,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use { 'mhartington/formatter.nvim' }
-
-
 
     -- telescope
     use {
@@ -29,7 +26,6 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use "lukas-reineke/lsp-format.nvim"
     use "sindrets/diffview.nvim"
     use 'nvim-tree/nvim-web-devicons'
     use { "axkirillov/telescope-changed-files" }
