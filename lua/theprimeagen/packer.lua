@@ -4,77 +4,21 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-
-    -- telescope
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-    use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
-
-    use "folke/tokyonight.nvim"
-    use "bluz71/vim-nightfly-colors"
-
-    use {
-        "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    }
-
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use "sindrets/diffview.nvim"
-    use 'nvim-tree/nvim-web-devicons'
-    use { "axkirillov/telescope-changed-files" }
-
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end }
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
-    }
-
-
-    use({
-        "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup {
-                icons = false,
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    })
-
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use "williamboman/mason.nvim"
+    use 'williamboman/mason-lspconfig.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end, }
-    use("nvim-treesitter/playground")
-    use("theprimeagen/harpoon")
-    use("theprimeagen/refactoring.nvim")
-    use("mbbill/undotree")
-    use("tpope/vim-fugitive")
     use("nvim-treesitter/nvim-treesitter-context");
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         requires = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
@@ -88,14 +32,61 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
+    use("nvimtools/none-ls.nvim");
 
+
+
+    -- telescope
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
+    use "nvim-telescope/telescope-file-browser.nvim"
+    use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
+    use { "axkirillov/telescope-changed-files" }
+
+    -- Harpoon
+   use("theprimeagen/harpoon")
+
+    -- Themes
+    use "folke/tokyonight.nvim"
+    use "bluz71/vim-nightfly-colors"
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'nvim-tree/nvim-web-devicons'
+
+    -- Find and replace
+    use "nvim-pack/nvim-spectre"
+    -- Status line
     use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = 'nvim-lua/plenary.nvim'
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    -- Filetree viewer
+   use {'nvim-tree/nvim-tree.lua'}
+
+    -- polyfills
+    use "nvim-lua/plenary.nvim"
+
+    -- Git
+    use "sindrets/diffview.nvim"
+    use("tpope/vim-fugitive")
+
+
+
+    -- not fequently used
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
+    use("theprimeagen/refactoring.nvim")
+    use("mbbill/undotree")
+
 
     use("folke/zen-mode.nvim")
     use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
-    use("laytan/cloak.nvim")
 end)

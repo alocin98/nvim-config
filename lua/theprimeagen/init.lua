@@ -10,6 +10,7 @@ local ThePrimeagenGroup = augroup('ThePrimeagen', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
+vim.opt.fileformats = "unix,dos,mac"
 
 function R(name)
     require("plenary.reload").reload_module(name)
@@ -26,13 +27,6 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
-})
-
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
