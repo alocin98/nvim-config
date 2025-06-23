@@ -1,14 +1,9 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
-
--- DO NOT INCLUDE THIS
-vim.opt.rtp:append("~/personal/streamer-tools")
--- DO NOT INCLUDE THIS
+require("alocin98.set")
+require("alocin98.remap")
 
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
-
 local autocmd = vim.api.nvim_create_autocmd
+
 local yank_group = augroup('HighlightYank', {})
 vim.opt.fileformats = "unix,dos,mac"
 

@@ -56,6 +56,6 @@ easypick.setup({
 
 
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fc', ':Easypick changed_files<CR>==')
-vim.keymap.set('n', '<leader>fu', ':Telescope lsp_references<CR>==')
-vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>==')
+vim.keymap.set('n', '<leader>fc', ':Easypick changed_files<CR>')
+vim.keymap.set('n', '<leader>fu', ':Telescope lsp_references<CR>')
+vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>')

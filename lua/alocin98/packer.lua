@@ -15,35 +15,22 @@ return require('packer').startup(function(use)
             ts_update()
         end, }
     use("nvim-treesitter/nvim-treesitter-context");
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-        requires = {
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
-
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-        }
-    }
+    use("hrsh7th/nvim-cmp")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("L3MON4D3/LuaSnip")
     use("nvimtools/none-ls.nvim");
+    use("jay-babu/mason-null-ls.nvim")
 
 
 
     -- telescope
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.8' }
     use "nvim-telescope/telescope-file-browser.nvim"
     use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
     use { "axkirillov/telescope-changed-files" }
 
     -- Harpoon
-   use("theprimeagen/harpoon")
+    use("theprimeagen/harpoon")
 
     -- Themes
     use "folke/tokyonight.nvim"
@@ -59,7 +46,7 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     -- Filetree viewer
-   use {'nvim-tree/nvim-tree.lua'}
+    use { 'nvim-tree/nvim-tree.lua' }
 
     -- polyfills
     use "nvim-lua/plenary.nvim"
@@ -67,6 +54,14 @@ return require('packer').startup(function(use)
     -- Git
     use "sindrets/diffview.nvim"
     use("tpope/vim-fugitive")
+
+    -- dotenv
+    use("tpope/vim-dotenv")
+
+    -- SQL
+    use("tpope/vim-dadbod")
+    use("kristijanhusak/vim-dadbod-ui")
+    use("kristijanhusak/vim-dadbod-completion")
 
 
 
