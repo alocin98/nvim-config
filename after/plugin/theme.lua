@@ -43,4 +43,6 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
+require("nightfox").setup({
+})
+vim.cmd.colorscheme("nightfox")

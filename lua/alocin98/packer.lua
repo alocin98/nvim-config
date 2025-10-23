@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
     use "bluz71/vim-nightfly-colors"
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-tree/nvim-web-devicons'
+    use { 'EdenEast/nightfox.nvim' , as = 'nightfox'}
 
     -- Find and replace
     use "nvim-pack/nvim-spectre"

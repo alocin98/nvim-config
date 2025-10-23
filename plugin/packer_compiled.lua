@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/nicolasmueller/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  nightfox = {
+    loaded = true,
+    path = "/Users/nicolasmueller/.local/share/nvim/site/pack/packer/start/nightfox",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["none-ls.nvim"] = {
     loaded = true,
     path = "/Users/nicolasmueller/.local/share/nvim/site/pack/packer/start/none-ls.nvim",

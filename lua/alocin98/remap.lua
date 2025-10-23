@@ -42,3 +42,12 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("w")
 end)
 vim.keymap.set("n", "<leader>j", "<C-W>l")
+
+-- For ruby on rails
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "eruby", -- for .html.erb
+  callback = function()
+    vim.keymap.set("n", "<leader>h", "i<%=  %><Esc>2hi", { buffer = true, silent = true })
+  end,
+})
+
