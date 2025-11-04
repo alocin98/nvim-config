@@ -192,16 +192,40 @@ null_ls.setup({
 		}),
 		erb_format,
 		elixir_format,
-		null_ls.builtins.formatting.stylua, -- 👈 Lua formatte   },
+    },
 })
 
-require("mason-null-ls").setup(   ensure_installed = { "prettierd" }   automatic_setup = true,
+require("mason-null-ls").setup({
+  ensure_installed = { "prettierd" },
+  automatic_setup = true,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre",    pattern = {   "*.js",   "*.ts",   "*.json",   "*.md",   "*.css",   "*.scss",   "*.html",   "*.vue",   "*.yaml",   "*.tsx",   "*.heex",   "*.components.ex",   "*.rb",   "*.erb",   "*.html.erb"   }   callback = function()   vim.lsp.buf.format({ async = false }   end,
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = {
+    "*.js",
+    "*.ts",
+    "*.json",
+    "*.md",
+    "*.css",
+    "*.scss",
+    "*.html",
+    "*.vue",
+    "*.yaml",
+    "*.tsx",
+    "*.heex",
+    "*.components.ex",
+    "*.rb",
+    "*.erb",
+    "*.html.erb",
+  },
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
 })
 
-vim.lsp.config("expert",    cmd = { "expert" }   root_markers = { "mix.exs", ".git" }   filetypes = { "elixir", "eelixir", "heex" },
-})
+
+
+  vim.lsp.config("expert", {cmd = { "expert" }, root_markers = { "mix.exs", ".git" }, filetypes = { "elixir", "eelixir", "heex" }, })
 
 vim.lsp.enable("expert")
