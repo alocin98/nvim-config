@@ -31,11 +31,15 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", function()
+    require("conform").format({ async = true, lsp_format = "fallback" })
+end)
 
 -- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", function()
+    vim.cmd.edit(vim.fn.stdpath("config") .. "/lua/alocin98/plugins.lua")
+end)
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
@@ -50,4 +54,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>h", "i<%=  %><Esc>2hi", { buffer = true, silent = true })
   end,
 })
-
