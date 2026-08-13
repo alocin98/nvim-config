@@ -8,7 +8,8 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        branch = "master",
+        branch = "main",
+        lazy = false,
         build = ":TSUpdate",
     },
     {
@@ -30,7 +31,7 @@ return {
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
+        tag = "v0.2.2",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     {
